@@ -1,1 +1,0 @@
-tot ce am scris in clasa e pus in fisiere txt care nu se afla in foldere aparte
