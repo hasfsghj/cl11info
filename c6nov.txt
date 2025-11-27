@@ -1,0 +1,245 @@
+cantitatea de informatie
+
+fie ca o sursa emite n mesaje (de exemplu semaforul emite 3 mesaje)
+
+cantitatea de informatie ce se contine intr-un mesaj se calculeaza dupa formula
+    i = log(a) n
+unde a este constanta, n este nr de mesaje, i este cantitate de informatie intr-un mesaj
+
+constanta a depinde de unitatea etalon, aleasa pentru masurarea informatiei
+    cantitatea de informatie care se contine intr-un mesaj al unei surse cu doar 2 mesaje posibile se numeste bit (0, 1)
+    adica, n = 2, si cine este a? i = 1 bit => log(a) 2 = 1 => a = 2
+
+deci
+        i = log(2) n
+
+
+de exemplu, sa calculam cantitatea de informatie, ce se contine intr-un mesaj a unui semafor 
+i = log(2) 3 = 1,55 bit 
+
+cand n = 5, i = log(2) 5 = 2,2 bit
+
+
+multiplii bitului
+1 kb = 2^10 bit (= 1024)
+1 Mb = 2^20 bit (= 2^10 kb)
+1 gb = 2^30 bit 
+1 Tb = 2^40 bit
+1 penta b = 2^50 bit
+
+in bit, kb, Mb, etc se masoara viteza de transmitere a informatiei 
+
+
+toata informatia din calculator se codifica cu ascii, unde orice caracter se condifica pe 8 biti.
+la tabelul ascii, i = log(2) 256 = 8
+
+sau, in propozitia "eu merg la liceu." sunt 16 (nr de caractere) * 8 (fiecare caracter scris prin 8 biti) = 128 bit
+i = log(2) 128 = 7
+
+
+a fost inventat o unitate mai mare ca bitul, ce se cheama octet sau byte, =8 bit. (1 B = 1 oc = 8 biti)
+1 kB = 2^10 B / oc 
+    ... aceleasi reguli ca la b.
+
+
+
+ex 1
+
+se da un text de 20 de pagini, pe fiecare pagina sunt 2 coloeane de text. in coloane 80 de randuri. in rand 50 de caractere
+cati b, B, kB?
+B = 160 000
+nu sunt 160k b pentru ca fiecare caracter este facut din 8 b, = 1 B 
+b = 160 000 * 8 = 1 280 000
+kB = 160 000 / 1024 = 156 kB, 256 B
+
+
+
+ex 2
+
+se da o carte cu 350 pag, 1 pag are 2 coloane, fiecare coloana 60 randuri, un rand 50 caractere. care e volumul de informatie in B, b, kB, MB 
+B = 2 100 000
+b = 16 800 000
+kB = 2050 kB 798 B aprox
+MB = 1025 MB 798 B aprox
+(corect se scrie, de exemplu, v = 2 100 000 B)
+
+
+
+toata infroamtia in calculatoare se codifica cu 2 cifre (0 sau 1), numite cifre binare. cuvantul ce contine cifre binare se numeste cuvant binar.
+
+
+ex 1
+
+daca lungimea cuvantului are m cifre binare, cate coduri diferite putem obtine?, daca lungimea cuvantului binar este m = 1
+2 ^m = 2
+daca m = 2, 2 ^m = 4
+daca m = 3, 2 ^m = 8
+
+    n = 2 ^m 
+
+
+m = int log(2) n
+
+
+ex 2
+
+care trebuie sa fie lungimea minima a cuvantului binar, ca sa putem codifica n mesaje
+exemplu, n = 15000
+m = log(2) 15000 (= 13,87) = 14
+
+
+
+cand m da un nr cu virgula, luam int(m) + 1 (adica rotunjim in sus)
+
+
+
+ex 1
+
+daca n = 700, m = 10
+
+
+
+ex 2
+
+la o expozitie de proiecte sunt expuse n lucrari. toate lucrarile au fost codificate cu cuvinte binare de lungimi egale.
+s-a constantat ca lungimea minima a cuvintelor binare necesare pentru (de)codificarea univoca a tuturor lucrarilor este egala
+cu 6 b. a# determinati cel mai mic nr de lucrari care poate fi expus. b# cel mai mare nr 
+
+a# (2 ^5) +1 = 32 + 1 = 33
+b# 2 ^6 = 64
+
+scrie exemplu de cod care permite codificarea cu cuvinte binare de lungime minima la 2 din lucrarile date 
+n = 2, m = 33
+
+
+2# 100101 (are 6 cifre pt ca am spus in problema ca cuvintele au 6 b). in baza 10, este 37
+   100001 in baza 10 este 33
+
+numerele trebuie sa fie intre 33 si 64!!! :3
+
+
+3# stiind cantitatea totala de informatie necesara pt (de)codificarea univoca a lucrarilor (este 324 bit), scrie nr acestor lucrari
+
+m = 6, i = 324
+324 = k * m; k = 324 / m = 324 / 6 = 54
+
+
+
+ex
+
+avem o lista, bifati purtatorii de informatii 
+
+unda acustica - static/mixt/dinamic - dinamic
+trebuie de ales care e 
+pelicula fotosenitiva (?) - static
+stick - mixt
+
+
+
+
+
+
+
+
+
+
+CANTIATEA DE INFORMATIE INTR-O IMAGINE
+
+rastru                 - nr de px/cm ^2; rezolutie
+discretizare in spatiu - marirea imaginii (ca un fel de zoom); discompunenrea imaginii in microzone (pixeli)
+imagine numerica       - setul de cuvinte binare asociate microzonelor
+cuantizarea imaginii   - descompunerea imaginii in imagine numerica 
+
+
+cu ajutorul unui rastru, imaginea se imparte in microzone, numite puncte/pixeli. fiecarui punct i se asociaza un cod binar, unde se
+tine cont de culoare, pozitie, si intensitatea culorii
+
+
+cantiatea de substanta dintr-o imagine se calculeaza dupa formula
+    i = r*mx * r*my * log(2) n = b
+    pentru monocrom
+
+    i = 3 * r*mx * r*my * log(2) n = b
+    pentru imagine color
+
+
+mx - nr de pixeli pe orizontala
+my - nr de pixeli pe verticala 
+n - nr de nuante a culorilor
+r - rastru
+
+
+
+ex 1
+
+se da img 25 x 40 color. rastru 512 px/cm^2. n = 256 nuante. de aflat i in b, B, kB, MB, gB 
+
+mx = 25 * 512 (= 25 * 2 ^9) din cauza la rastru
+my = 40 * 2 ^9
+
+i = 8 * 2 ^9 * 2 ^9 * 25 * 40 * 3 = 6 291 456 000 b 
+
+
+
+
+
+
+CANTIATEA DE INFORMATIE INTR-UN VIDEO
+
+
+V = f * I * T = bits
+
+
+f = fps
+    tv = 25 fps
+    cinema = 24 fps
+
+i = cantitatea de informatie a unui cadru in biti
+
+T = timpul, s
+
+
+ex
+
+se da un video difuzat la tv timp de 2,5 ore. camera de filmat este color, 2048 x 1024 rezolutie, n = 512 culori.
+de aflat V in bytes, kB, MB, GB, TB 
+
+V = f * I * T = 25 * 9 000 * 3 * r*mx * r*my * log(2) n = 225 000 * 3 * 2048 * 1024 * 9 = 225 000 * 27 * 2 ^21
+bytes: 28 125 * 27 * 2 ^21 = 759 375 * 2 ^21
+kB: 759 375 * 2 ^11
+MB: 759 375 * 2 = 1 518 750
+GB: 1 518 750 / 1024 = 1483,15 GB 
+TB: 1483,15 / 1024 = 1,45 TB
+
+
+
+ex
+
+se da camera color 2048 x 4096 nuante n =512, 25 fps, 2.5 h. b, B, kB, MB, GB, TB 
+
+225 000 * 27 * 2 ^23
+B: 759 375 * 2 ^23
+kB: 759 375 * 2 ^13
+MB: 759 375 * 2 ^3 = 6 075 000
+GB: 5932 GB 632 MB
+TB: 5 TB, 812 GB, 632 MB 
+
+
+
+ex
+
+cantitatea d einformatie intr-un text? are 100 litere dintr-un alfabet cu marimea de 5
+
+= 4000 b = 500 B 
+
+
+
+ex
+
+se da img 16 x 16 cm monocrom, rastru 128 px/cm, n =64. MB?
+
+i = r*mx * r*my * log(2) n = 6 * 2048 * 2048 = 2 ^22 * 6
+
+B = 2 ^19 * 6
+KB = 2 ^9 * 6
+MB = 2 ^(-1) * 6 = 3

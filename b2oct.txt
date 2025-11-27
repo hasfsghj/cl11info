@@ -1,0 +1,8 @@
+se da int n, m. n<=10, m<=15. int a[n][m].
+    1. de citit n, m 
+    2. de citit a
+    3. scris elementele lui a
+    4. aflat suma numerelor, nr max, nr min 
+    5. aflat nr max per coloana 
+    6. aflat per linie, locul primului nr par
+    7. sortat liniile in ordine descrescatoare, scris tabloul

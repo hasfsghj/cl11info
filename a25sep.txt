@@ -1,0 +1,27 @@
+tablourile au randuri si coloane; daca luam elementul A[2][3] va fi randul 2, coloana 3
+ele se declara "int D[4][3]". randuri: 0 1 2 3, coloane: 0 1 2
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int n, m, A[100][100], i, j;
+
+int main()
+{
+//citirea tabloului
+    cout<<"n="; cin>>n;
+    cout<<"m="; cin>>m;
+    
+    for (i=0; i<=n; i++)
+    for (j=0; j<=m; j++)
+    { cout<<"A["<<i<<"]["<<j<<"]="; cin>>A[i][j]; }
+
+//scrierea tabloului
+    cout<<"avem tabloul:\n";
+    for (i=0; i<=n; i++) {
+    for (j=0; j<=m; j++)
+    cout<<A[i][j]<<" ";
+    cout<<endl; }
+    return 0;
+}

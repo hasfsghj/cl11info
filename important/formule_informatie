@@ -1,0 +1,21 @@
+in mesaj
+i = log(2) n
+
+
+in video 
+V = f * I * T = bits
+
+
+in img
+i = r*mx * r*my * log(2) n = b
+    pentru monocrom
+i = 3 * r*mx * r*my * log(2) n = b
+    pentru imagine color
+mx - nr de pixeli pe orizontala
+my - nr de pixeli pe verticala 
+n - nr de nuante a culorilor
+r - rastru
+
+
+lungimea cuvantului binar
+m = int log(2) n
