@@ -13,7 +13,7 @@ avem nr 61 + 52. adunati nr intregi si reprezentati-le pe 8 pozitii binare
 
 
 
-pentru scadere, hai de exemplu 7 + (-5)  --  cu [] vor fi numerele semne
+pentru scadere, hai de exemplu 7 + (-5)  --  *cu [] vor fi numerele semne
 7 = [0]111
 -5 = [1]101 - cd
 -5 = [1]010 - ci
@@ -31,3 +31,22 @@ in baza 10, trebuie sa mergem invers prin toti pasii
 (cc) [1]10 ( -> in ci vom face -1)
 (ci) [1]01 ( -> in cd vom inversa)
 (cd) [1]10 (super! am ajuns la rezultatul corect)
+
+
+
+
+
+ex 
+13 + (-26)
+13 = [0]0001101
+-26 = [1]0011010
+
+[0]0001101+
+[1]0011010
+
+[1]0100111 cc 
+presupun ca scoatem toti 0 nenecesari?
+
+[1]100111 cc
+[1]100110 ci 
+[1]011001 cd = [1]11001
