@@ -50,3 +50,30 @@ presupun ca scoatem toti 0 nenecesari?
 [1]100111 cc
 [1]100110 ci 
 [1]011001 cd = [1]11001
+
+
+
+
+
+
+
+
+
+
+
+reprezentarea numerelor reale
+
+nr reale se reprezinta in 2 moduri
+    1. cu virgula fixa
+    2. cu virgula flotanta / mobila
+
+
+- virgula fixa: nr reale subunitare (0,ceva) pt aceasta:
+
+    1. luam numai partea zecimala si o transformam in baza 2, avand 0 intregi 
+    2. intregul nu se pune, primul bit este semnul, iar dupa semn se pun bitii partii zecimale
+        * avem nr 0,54296875. reprezentati nr real in virgula fixa 
+          0,54296875 *2 = 1,0859375; 0,0859375 *2 = 0,17187504; 0,17187504 *2 = 0,34375008; 0,34375008 *2 = 0,68750016;
+          0,68750016 *2 = 1,37500032; 0,37500032 *2 = 0,75000064; 0,75000064 *2 = 1,50000128; 0,50000128 *2 = 1,...
+
+          [0]10001011
