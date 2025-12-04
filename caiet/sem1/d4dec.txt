@@ -1,0 +1,33 @@
+adunarea si scaderea nr intregi
+
+
+
+avem nr 61 + 52. adunati nr intregi si reprezentati-le pe 8 pozitii binare
+61 = 00111101
+52 = 00110100
+
+00111101 +
+00110100
+
+01110001
+
+
+
+pentru scadere, hai de exemplu 7 + (-5)  --  cu [] vor fi numerele semne
+7 = [0]111
+-5 = [1]101 - cd
+-5 = [1]010 - ci
+
+apoi luam cc, 101 -cd
+              010 -ci
+              011 -cc !
+
+iar acum facem [0]111 (7) + [1]011 (-5) = [0]010 (2)
+
+
+
+daca ne-ar iesi un numar negativ, gen 5 + (-7) iese -2. dar in urma operatiilor el va iesi in cc. deci ca sa scriem rezultatul
+in baza 10, trebuie sa mergem invers prin toti pasii
+(cc) [1]10 ( -> in ci vom face -1)
+(ci) [1]01 ( -> in cd vom inversa)
+(cd) [1]10 (super! am ajuns la rezultatul corect)

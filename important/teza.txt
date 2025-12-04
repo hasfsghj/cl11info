@@ -1,2 +1,2 @@
 la teza
-tablouri, sisteme de enumeratie, informatie
+tablouri, sisteme de enumeratie, informatie, baze, reprezentarea si operatii cu nr intregi
