@@ -1,2 +1,8 @@
 la teza
-tablouri, sisteme de enumeratie, informatie, baze, reprezentarea si operatii cu nr intregi
+
+
+tablouri (teorie, tipuri de date, etc), sisteme de enumeratie, informatie, baze (schimbari + operatii),
+reprezentarea si operatii cu nr intregi (cd, ci, cc; virgule fixe si mobile; adunari si scaderi),
+operatori gen or sau and sau xor (+ definitiile lor)
+
+cod in c++ cu operatii in baze diferite. niciun alt cod sau algoritm
