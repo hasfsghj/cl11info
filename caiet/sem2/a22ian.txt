@@ -2,6 +2,7 @@ algebra booleana, expresii logice
 
 
 
+
 algebra booleana (sau algebra logica) este un compartiment al matematicii (al logicii matematice) care se bazeaza pe legile
 gandirii - obiectul de studii al logicei clasice.
 
@@ -21,4 +22,117 @@ algebra booleana contine:
     * operatori logici (not, nor, or, xor, implicatia, echivalenta (coincidenta), and not, or not, and)
     * cu variabile si operatori alcatuim "expresii logice"
 
-a evalua o expresie logica inseamna a gasi valoarea ei pt orice combinatie de valori a variabilelor
+a evalua o expresie logica inseamna a gasi valoarea ei pt orice combinatie de valori a variabilelor din aceasta expresie.
+expresia poate avea:
+    * o variabila (cu valoarea 0 sau 1 => sunt 2 ^1 posibilitati de combinatii)
+    * 2 variabile (sunt posibile 2 ^2 = 4 combinatii de valori: 00, 01, 10, 11)
+    * 3 variabile (sunt posibile 2 ^3 = 8 combinatii)
+    * 4 variabile (sunt posibile 2 ^4 = 16 combinatii)
+
+pentru a evalua o expresie logica, alcatuim un tabel de adevar in care:
+    * precautam toate combinatiile de valori ale variabilelor
+    * efectuam intr-o ordine bine stabilita toate operatiile 
+    * pt fiecare combinatie de valori ale variabilelor, aflam valoarea expresiei
+
+
+
+prioritatea operatorilor:
+    1. not - !
+    2. and - &
+    3. or - |
+
+exemplu: expresia E = p or !p and q = p | !p & q
+    1. !p 
+    2. !p & q
+    3. p | (!p & q)
+
+        ** daca am scrie x(x | q), noi luam ca e x & (x | q)
+
+
+  p  |  q  | !p  |  !p&q |  p|(!p&q)  |
+---------------------------------------
+  0  |  0  |  1  |   0   |      0     |
+  0  |  1  |  1  |   1   |      1     |
+  1  |  0  |  0  |   0   |      1     |
+  1  |  1  |  0  |   0   |      1     |
+
+
+
+operatori logici cu ajutorul carora vom alcatui expresii logice compuse din mai multi operanti sunt:
+    * not - ! - pe foaie se scrie cu linie deasupra literei
+    * and - & - pe foaie: ^ sau inmultire (see above**)
+    * or - | - pe foaie: v 
+    * implicatie ->
+    * echivalenta <-> (sau trei linii ca la hamburger menu)
+    * xor - ramane asa (sau ^^)
+
+
+definitia operatorilor logici:
+    * conjunctia p, q = p & q / p and q / pq / p ^ q
+        este TRUE cand p SI q ambele = 1, si FALSE in orice alt caz (gen 0 & 1 e FALSE)
+    * disjunctia p, q = p | q, p v q
+        este TRUE cand cel putin o propozitie = 1, si FALSE cand ambele sunt = 0 (gen 0 | 1 e TRUE)
+    * implicatia p, q = p -> q
+        este FALSE daca p =1, iar q =0, in rest - este TRUE
+        daca sta un destept (1) langa un prost (0) el iese prost (=0)...
+            !!!  p -> q echivalent cu !p | q (p -> q <-> !p | q)
+    * echivalenta p, q = p <-> q
+        este TRUE daca p, q au aceleasi valori, si fals cand au valori diferite (1<->0 = 0, 0<->0 = 1)
+            !!! p <-> q = (p -> q) & (q -> p) = pq | !p!q
+    * p xor q 
+        este TRUE cand p si q sunt diferiti, si FALSE cand ele sunt egale
+        se cheama negarea echivalentei
+            !!! !p <-> q
+    * negatia p = !p = p̅
+        este TRUE cand p e FALSE, si FALSE cand p e TRUE
+
+
+
+tabel de adevar
+   p   |   q   |   !p  |   !q  |  p&q  |  p|q  |  p->q |  q->q | p<->q |  p^^q |
+--------------------------------------------------------------------------------
+   0   |   0   |   1   |   1   |   0   |   0   |   1   |   0   |   1   |   0   |
+   0   |   1   |   1   |   0   |   0   |   1   |   1   |   1   |   0   |   1   |
+   1   |   0   |   0   |   1   |   0   |   1   |   0   |   0   |   0   |   1   |
+   1   |   1   |   0   |   0   |   1   |   1   |   1   |   0   |   1   |   0   |
+
+
+
+
+ex
+E1 = (!x & y -> z) | (z -> !y)& x 
+    1. !x
+    2. !x & y
+    3. !x & y -> z
+    4. !y
+    5. z -> !y
+    6. (z -> !y)& x
+    7. tot impreuna
+
+                                           3                        6
+   x   |   y   |   z   |   !x  |  !x&y |!x&y->z|   !y  | z->!y |(z->!y)&x|  3|6  |
+----------------------------------------------------------------------------------
+   0   |   0   |   0   |   1   |   0   |   1   |   1   |   1   |    0    |   1   |
+   0   |   0   |   1   |   1   |   0   |   1   |   1   |   1   |    0    |   1   |
+   0   |   1   |   0   |   1   |   1   |   0   |   0   |   1   |    0    |   0   |
+   0   |   1   |   1   |   1   |   1   |   1   |   0   |   0   |    0    |   1   |
+   1   |   0   |   0   |   0   |   0   |   1   |   1   |   1   |    1    |   1   |
+   1   |   0   |   1   |   0   |   0   |   1   |   1   |   1   |    1    |   1   |
+   1   |   1   |   0   |   0   |   0   |   1   |   0   |   1   |    1    |   1   |
+   1   |   1   |   1   |   0   |   0   |   1   |   0   |   1   |    1    |   1   |
+
+
+ex
+E = !(x & y | z)
+
+   x   |   y   |   z   |  x&y  | x&y|z |!(x&y|z)|
+-------------------------------------------------
+   0   |   0   |   0   |   0   |   0   |    1   | 
+   0   |   0   |   1   |   0   |   1   |    0   |
+   0   |   1   |   0   |   0   |   0   |    1   | 
+   0   |   1   |   1   |   0   |   1   |    0   | 
+   1   |   0   |   0   |   0   |   0   |    1   | 
+   1   |   0   |   1   |   0   |   1   |    0   |
+   1   |   1   |   0   |   1   |   1   |    0   | 
+   1   |   1   |   1   |   1   |   1   |    0   | 
+
