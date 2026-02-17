@@ -38,8 +38,8 @@ pentru a evalua o expresie logica, alcatuim un tabel de adevar in care:
 
 prioritatea operatorilor:
     1. not - !
-    2. and - &
-    3. or - |
+    2. and - & - ^
+    3. or - | -v
 
 exemplu: expresia E = p or !p and q = p | !p & q
     1. !p 
@@ -75,10 +75,10 @@ definitia operatorilor logici:
     * implicatia p, q = p -> q
         este FALSE daca p =1, iar q =0, in rest - este TRUE
         daca sta un destept (1) langa un prost (0) el iese prost (=0)...
-            !!!  p -> q echivalent cu !p | q (p -> q <-> !p | q)
+            !!!  p -> q echivalent cu !p | q (p -> q <-> !p v q)
     * echivalenta p, q = p <-> q
         este TRUE daca p, q au aceleasi valori, si fals cand au valori diferite (1<->0 = 0, 0<->0 = 1)
-            !!! p <-> q = (p -> q) & (q -> p) = pq | !p!q
+            !!! p <-> q = (p -> q) & (q -> p) = pq v !p!q
     * p xor q 
         este TRUE cand p si q sunt diferiti, si FALSE cand ele sunt egale
         se cheama negarea echivalentei
@@ -136,3 +136,6 @@ E = !(x & y | z)
    1   |   1   |   0   |   1   |   1   |    0   | 
    1   |   1   |   1   |   1   |   1   |    0   | 
 
+
+ex
+E = !(x & y | z)
