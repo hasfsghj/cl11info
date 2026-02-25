@@ -1,0 +1,79 @@
+adunarea si scaderea nr intregi
+
+
+
+avem nr 61 + 52. adunati nr intregi si reprezentati-le pe 8 pozitii binare
+61 = 00111101
+52 = 00110100
+
+00111101 +
+00110100
+
+01110001
+
+
+
+pentru scadere, hai de exemplu 7 + (-5)  --  *cu [] vor fi numerele semne
+7 = [0]111
+-5 = [1]101 - cd
+-5 = [1]010 - ci
+
+apoi luam cc, 101 -cd
+              010 -ci
+              011 -cc !
+
+iar acum facem [0]111 (7) + [1]011 (-5) = [0]010 (2)
+
+
+
+daca ne-ar iesi un numar negativ, gen 5 + (-7) iese -2. dar in urma operatiilor el va iesi in cc. deci ca sa scriem rezultatul
+in baza 10, trebuie sa mergem invers prin toti pasii
+(cc) [1]10 ( -> in ci vom face -1)
+(ci) [1]01 ( -> in cd vom inversa)
+(cd) [1]10 (super! am ajuns la rezultatul corect)
+
+
+
+
+
+ex 
+13 + (-26)
+13 = [0]0001101
+-26 = [1]0011010
+
+[0]0001101+
+[1]0011010
+
+[1]0100111 cc 
+presupun ca scoatem toti 0 nenecesari?
+
+[1]100111 cc
+[1]100110 ci 
+[1]011001 cd = [1]11001
+
+
+
+
+
+
+
+
+
+
+
+reprezentarea numerelor reale
+
+nr reale se reprezinta in 2 moduri
+    1. cu virgula fixa
+    2. cu virgula flotanta / mobila
+
+
+- virgula fixa: nr reale subunitare (0,ceva) pt aceasta:
+
+    1. luam numai partea zecimala si o transformam in baza 2, avand 0 intregi 
+    2. intregul nu se pune, primul bit este semnul, iar dupa semn se pun bitii partii zecimale
+        * avem nr 0,54296875. reprezentati nr real in virgula fixa 
+          0,54296875 *2 = 1,0859375; 0,0859375 *2 = 0,17187504; 0,17187504 *2 = 0,34375008; 0,34375008 *2 = 0,68750016;
+          0,68750016 *2 = 1,37500032; 0,37500032 *2 = 0,75000064; 0,75000064 *2 = 1,50000128; 0,50000128 *2 = 1,...
+
+          [0]10001011

@@ -1,0 +1,167 @@
+371,26+
+ 67,43=
+
+460,71 (baza8)
+
+
+
+3417,615-
+ 634,721
+
+2562,674
+
+
+
+650,54 / 251,7 = 2,4
+523,6
+
+1247,4
+1247,4
+
+
+
+ade1f+
+ 6bed
+
+b4a0c
+
+
+
+f00a-
+   b 
+
+efff
+
+
+
+ffa6+
+ 486
+
+1042c
+
+
+
+ff*
+ f 
+
+f0f0
+gresit trebuie fe1
+
+
+
+ff-
+a1 
+
+5e
+
+
+
+302-
+214
+
+66
+
+
+
+1351-
+ 263
+
+1066
+
+
+
+61*
+12
+
+ 142
+ 61
+
+752
+
+
+
+
+
+reprezentarea numerelor naturale in calculator
+
+reprezentarea numerelor naturale N={0,1,2,3,..}
+se realizeaza pe un nr fix pe pozitii binare
+de regula avem 8, 16, 32, 64 pozitii binare
+
+
+reprezentarea numerelor pe n pozitii binare:
+
+ n-1    n-2         1    0
+ [ ]    [ ]        [ ]  [ ]
+2^n-1  2^n-2  ...  2^1  2^0
+
+
+
+
+in pozitiile 0, 1, 2, ... n-1 sunt inscrise cifrele binare ale nr natural reprezentat in sistemul de numeratie binar.
+alinierea nr binare se realizeaza la dreapta, eventualele zerouri nesemnificative sunt plasate in fata numarului binar
+hai sa reprezentam 1039 pe 16 pozitii binare 
+
+in binar el e 10000001111
+in total sunt 11 digits. pentru a il intinde pe 16 pozitii binare, doar vom pune inca 5 zerouri in fata!
+0000010000001111 
+
+daca as scrie asta intr-un test, ar trebui sa PUN FIECARE CIFRA INTR-O CASETA, si sa NUMEROTEZ CASETELE DE LA DREAPTA SPRE STANGA, INCEPAND CU 0
+
+
+
+nr maxim ce poate fi reprezentat pe n pozitii binare = 1* 2^0 + 1* 2^1 + 1* 2^2 ... + 1* 2^(n-1)  =  2^n -1
+
+
+
+reprezentati nr naturale 3, 112, 191, 204, 255 pe 8 pozitii binare
+3 = 11  =  00000011
+112 = 1110000  =  01110000
+191 = 10111111
+204 = 11001100
+255 = 11111111
+
+si vedem ca in 8 casete, cel mai mare numar reprezentabil e 255 => 2^n -1
+
+
+
+
+
+
+
+
+
+
+reprezentarea numerelor intregi
+
+
+in calculator nu exista posibilitatea directa a introducerii semnului + sau -
+deci + va fi reprezentat prin 0, si - prin 1
+asta se numeste cifra semn
+
+avem codul direct, codul invers, si codul complimentar
+
+c. direct : scrierea unui nr in acest cod este foarte simpla. in partea de "cifra semn" se respecta regula de mai de sus. in partea de
+            "valoare" se scrie nr in sistemul obisnuit, binar 
+            si aici vom pune cifra semn pe ultima pozitie din stanga (caseta nr 7)
+
+            gen +52 =
+            00110100
+            si -52 = 
+            10110100
+
+
+c. invers : pt numerele pozitive, este la fel ca la codul direct. pt numere negative, el se scrie mai intai ca si cum ar fi pozitiv, apoi
+            se inverseaza fiecare cifra binara. adica 1 => 0, 0=> 1.
+
+            gen -52 = 
+            11001011
+
+            dar prima cifra tot timpul va fi 1 (pt a arata ca e negativ)
+
+
+c. compl. : numerele pozitive sunt ca in codul direct si invers. daca nr e negativ, el se scrie mai intai in cod invers, apoi se aduna 1
+            la cifra cea mai putin semnificativa (pozitia 0)
+
+            gen -52 =
+            110010110

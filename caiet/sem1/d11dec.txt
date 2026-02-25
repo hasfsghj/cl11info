@@ -1,0 +1,271 @@
+reprezentarea numerelor reale cu virgula mobila : sunt 2 metode
+
+1. reprezentarea exponent mantisa
+2. reprezentarea caracteristica mantisa
+
+cu virgula mobila se reprezinta: nr mai mari ca 1, nr foarte mici
+
+semnul mantisa (sm)      semnul exponent (se)      exponent nr 2       mantisa 
+      []                          []                    []                []
+
+
+
+
+gen 23 = 10111 = 0,10111 * 2 ^5 (^5 pt ca am dus virgula la stanga cu 5)
+
+ semnul mantisa         semnul exponentului                     exponent nr 2                                mantisa
+semnul numarului     noi avem 10 la puterea +5        tot timpul va avea 4 digits; aici              chiar numarul, aici 23
+                                                      scriem exponentul in binar (ex: 5)
+       0                        0                                    0101                                     10111
+
+=00010110111
+
+
+la -23, schimbam in cd, ci, cc DOAR mantisa. (si schimbam semn mantisa) deci ar fi gen 
+
+ci:
+1  0  0101  01000
+= 10010101000
+cc:
+10010101001
+
+
+iar daca exponentul ar fi negativ, DOAR exponentului ii facem cd, ci, cc 
+
+
+
+
+
+
+
+
+ex 
+-0,375
+= -0,011
+= -0,11 * 2 ^ -1 (pt ca am dus virgula la DREAPTA cu 1)
+
+sm  se  exp   mantisa
+1   1   0001  11            cd 
+
+1 1 1110 00   ci 
+1 1 1110 01   cc 
+
+
+
+
+ex
+-321,6337890625
+= -101000001,1010001001
+= -0,1010000011010001001 * 2 ^9 (pt ca am dus virgula la STANGA cu 9)
+
+sm  se  exp   mantisa
+1   0   1001  1010000011010001001     cd 
+
+1 0 1001 0101111100101110110   ci 
+1 0 1001 0101111100101110111   cc 
+
+
+
+
+ex 
+-0,00000000001011101
+= 0,1011101 * 2 ^ -10
+
+sm  se  exp   mantisa
+1   1   1010  1011101     cd
+
+
+
+
+ex 
+4,9375
+= 100,1111
+= 0,1001111 * 2 ^ 3
+
+sm  se  exp   mantisa
+0   0   0011  1001111     cd 
+cd = cc = ci 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+operatii in virgula mobila
+
+
+adunarea si scaderea a 2 numere in virgula mobila:
+
+    1. se compara cei 2 exponenti pt a determina pe cel mai mare
+    2. se aliniaza mantisa numarului cu exponentul mai mic prin deplasarea virgulei cu un nr de pozitii egal cu diferenta exponentilor
+    3. se aduna / scad mantisele aliniate, atribuind rezultatului exponentul comun
+    4. eventual se normalizeaza mantisa rezultatului cu modificarea exponentului 
+
+
+
+ex 
+15 + 1,75
+
+15 = 1111; 1,75 = 1,11
+15 = 0,1111 * 2 ^4
+1,75 = 0,111 * 2 ^ 1
+
+exponentul lui 15 e mai mare (exp 15 = 4, exp 1,75 = 1; 4-1 = 3) => facem si 1,75 sa aiba exponentul 4
+
+1,75 = 0,000111 * 2 ^4 (adaugam 3 de 0 in fata pt ca diferenta intre exponenti e 3)
+
+15 -
+1,75
+
+devine
+
+0,111100 (* 2 ^4) -
+0,000111 (* 2 ^4)
+
+0,1000011 * 2 ^5
+
+
+
+
+
+ex 
+13 - 0,25
+13 = 1101 = 0,1101 * 2 ^4
+0,25 = 0,01 = 0,1 * 2 ^-1
+
+4 - (-1) = 5; adaugam 5 de 0 in fata la 0,25
+0,25 = 0,000001 * 2 ^4
+
+13 - 0,25
+
+0,110100 * 2^4 -
+0,000001 * 2^4
+
+0,110011 * 2^4
+
+
+
+
+
+
+
+
+
+inmultirea si impartirea presupune:
+
+inmultirea/impartirea mantiselor; adunarea/scaderea exponentilor
+
+
+
+ex
+4 * 8,5
+
+4 = 100 = 1 = 0,1 * 2^3
+8,25 = 1000,1 = 0,100001 * 2^4
+
+NU normalizam
+
+0,10001 * 2^4 *
+    0,1 * 2^3
+
+ 010001
+000000
+
+00,10001 * 2^7
+
+
+
+
+
+
+
+
+reprezentarea zecimala codificata binar 
+
+
+cel mai utilizat este codul zecimal codificat binar, scris BCD (binary coded decimal). cifrele 0 -> 9 sunt reprezentate prin valori binare 
+echivalente pe cate 4 pozitii binare (0 = 0000, 1 = 0001, ...)
+reprezentarea numerelor zecimale se realizeaza in grupuri de 8 cifre binare in 2 forme
+
+    1. impachetat/condensat (zip/rar), in care pe 8 pozitii binare se pot reprezenta cate 2 cifre zecimale codificate binar 
+    2. despachetat/dilatat, in care pe 8 pozitii binare se reprezinta o singura cifra zecimala codificata binar, precedata de 4 cifre binare 
+        numite "marca" (M)
+
+
+
+ex:
+
+avem nr 9347
+
+impachetat: reprezentam 93 si 47
+
+9 = 1001
+3 = 0011
+4 = 0100
+7 = 0111
+
+93 nu scriem chiar ca 93, dar 'concatinam' cifrele '9' + '3'
+1001 0011
+
+47 tot asa, = 0100 0111
+
+9347 = [1001 0011] [0100 0111]
+
+despachetat: tot aparte, scriem "M" inainte de orice nr
+
+9347 = [M1001] [M0011] [M0100] [M0111]
+
+
+
+
+daca aveam nr gen 934, era [1001 0011] [0100 0000]
+
+
+
+
+
+
+
+
+
+
+adunarea pachetelor
+
+    1. exprimarea fiecarei cifre zecimale printr-o tetrada binara 
+    2. efectuarea adunarii pozitiei + pozitiei de la dreapta la stanga 
+    3. daca rezultatul adunarii se obtine nr binar care nu reprezinta o cifra zecimala (adica =10, 11, ...) sau apare transport (are mai mult
+        de 4 cifre), se adauga 6 (0110)
+
+
+ex 
+
+187 + 298
+
+1 = 0001   2 = 0010
+8 = 1000   9 = 1001
+7 = 0111   8 = 1000
+
+0001 1000 0111 +
+0010 1001 1000
+
+0100 0001 1111
+
+la al doilea si al treilea facem +6, la al doilea a fost trecere, iar al treilea e mai mare ca 9
+
+0100 0001 1111
+     0110 0110
+
+1000 0111 0101
+          0110 (pentru ca iara a fost trecere)
+
+1000 0010 1011
+
+habar nu am daca e corect

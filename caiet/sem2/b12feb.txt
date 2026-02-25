@@ -1,0 +1,124 @@
+postulate si teoreme de baza a algebrei boolene
+
+
+2 expresii logice sunt egale daca valorile lor coincid pentru toate combinatiile posibile ale valorilor
+variabilelor din expresiile respective
+
+!(xvy), !x^!y
+
+  x  |  y  | xvy |!(xvy)
+------------------------
+  0  |  0  |  0  |  1
+  0  |  1  |  1  |  0
+  1  |  0  |  1  |  0
+  1  |  1  |  1  |  0
+
+  x  |  y  |  !x |  !y |!x^!y
+-----------------------------
+  0  |  0  |  1  |  1  |  1
+  0  |  1  |  1  |  0  |  0
+  1  |  0  |  0  |  1  |  0
+  1  |  1  |  0  |  0  |  0
+
+    * facut gresit, see below
+
+xvy, !xv!y
+
+  x  |  y  | xvy |  !x |  !y |!xv!y
+-----------------------------------
+  0  |  0  |  0  |  1  |  1  |  1
+  0  |  1  |  1  |  1  |  0  |  1
+  1  |  0  |  1  |  0  |  1  |  1
+  1  |  1  |  1  |  0  |  0  |  0
+              |                 |
+              ╰-----------------╯
+                      =/=
+
+    * trebuie de unit rezultatele finale la ambele operatii, FACUTE IN ACELASI TABEL, si de scris = sau =/=
+
+
+
+postulate 
+
+    1) elementul de identitate in raport cu operatorul AND este 1, iar in raport cu SAU este 0
+    2) AND si OR respecta regula comutivitatii
+        *ex.: xvy = yvx
+    3) AND si OR respecta legea distributivitatii
+        *ex.: x^(yvz) = x^y v x^z
+    4) pt negatia oricarei variabile x, se respecta egalitatile:
+        x ^ !x = 0;  x v !x = 1
+
+
+teoreme 
+
+    1) idempotenta: x^x = x;  xvx = x 
+    2) xv0 = 0;  xv1 = 1
+    3) dubla negatie: !!x = x 
+    4) asociativitatea: x ^ (y^z) = (x&y) & z;  x v (yvz) = (xvy) v z
+    5) absorbtie: x ^ (xvy) = x;  x v (x^y) = x 
+    6) morgan: !(x^y) = !x v !y;  !(xvy) = !x ^ !y 
+
+
+ex 
+
+e1 = !x ^ y v x ^ !y v !x ^ !y 
+   = (!x ^ y) v (x ^ !y) v (!x ^ y) 
+   = !xvx ^ !xv!y ^ yvx ^ yv!y v (!x ^ y)
+   = 1 ^ !xv!y ^ yvx ^ 1 v (!x ^ y)
+   = !xv!y ^ xvy v (!x^y) 
+   = !x^x v !x^y v !y^x v !y^y v (!x^y) 
+   = !x^y v !y^x v !x^y
+
+    * gresit, trebuie !x v !y
+
+
+e2 = (!x ^ y -> z) v (z -> !y) ^ x
+   = (!xy -> z) v (xz -> !yx)
+   = (x!y v z) v (!x!y v !yx)
+
+    * i give up 
+
+
+
+ex 
+
+xy v x!y v !xy  si  xvy 
+pt ca este xy si !xy pai x si !x se reduc???
+y v x!y v y  -  acum y si !y se reduc
+yvx = xvy 
+
+
+ex 
+
+xy v !xy v !x!y  si  !xvy 
+x cu !x se reduc, y cu !y tot, ramane y v !x 
+
+
+ex 
+
+x!z v xy v !xy  si  x!z v y 
+x cu !x se reduc 
+x!z v y 
+
+
+ex 
+
+x v y v xy v yz  si  xvy 
+xvxy = x, yvyz = y 
+= x v y 
+
+
+ex 
+
+!x v y v !xz v yz  si  !x v y 
+!x v !xz = !x, y v yz = y 
+= !x v y 
+
+
+ex 
+
+(!xy -> z) v (z->!y)x 
+(x!y v z) v (!z v !y)x
+= (x v !y v z) v (x!y v !z) 
+= !y (1vx) v x(1 v !z) v z
+= !y v x v z

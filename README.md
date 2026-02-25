@@ -2,7 +2,7 @@
 
 
 ## caiet
-in acest folder sunt toate temele din clasa, scrise. include lucruri precum exemple de cod (pentru mine insumi), exercitii rezolvate, si, desigur, notite!
+in acest folder sunt toate temele din clasa, scrise. include lucruri precum exemple de cod (pentru mine insumi), exercitii rezolvate, si, desigur, conspecte!
 
 ## important
 acest folder este mai mult pentru mine. altora ar putea sa nu le trebuiasca, fiindca include lucruri ca transformari dintr-o baza in alta, sau formule.
