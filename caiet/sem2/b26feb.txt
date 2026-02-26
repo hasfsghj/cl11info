@@ -1,0 +1,113 @@
+EVALUARE
+ - functii 
+ - circuite
+
+
+
+ ... din tema anterioara
+
+ pi - sume de produs
+ x1 x2 v !x1 x2
+
+ si - produs de sume 
+ x1 v x2 ^ !x1 v x2
+
+
+
+
+  i  |  x1 |  x2 |  x3 |      Si     |
+--------------------------------------
+  0  |  0  |  0  |  0  | x1 v x2 v x3 |
+  1  |  0  |  0  |  1  | x1 v x2 v!x3 |
+  2  |  0  |  1  |  0  | x1 v!x2 v x3 |
+  3  |  0  |  1  |  1  | x1 v!x2 v!x3 |
+  4  |  1  |  0  |  0  |!x1 v x2 v x3 |
+  5  |  1  |  0  |  1  |!x1 v x2 v!x3 |
+  6  |  1  |  1  |  0  |!x1 v!x2 v x3 |
+  7  |  1  |  1  |  1  |!x1 v!x2 v!x3 | 
+
+rezultatul la toate e 0
+
+
+
+
+
+de exemplu. avem (y = f(x))
+
+  x1 |  x2 |  x3 |  y  |
+-----------------------
+  0  |  0  |  0  |  1  | 0
+  0  |  0  |  1  |  0  | ¹
+  0  |  1  |  0  |  0  | ²
+  0  |  1  |  1  |  0  | ³
+  1  |  0  |  0  |  1  | 4
+  1  |  0  |  1  |  1  | 5
+  1  |  1  |  0  |  0  | ⁶
+  1  |  1  |  1  |  0  | ⁷
+
+ne uitam la y ce are mai putine - 0 sau 1? noi vedem ca are mai putine valori de 1! deci, noi vom scrie pe y 
+drept o suma! o suma intre toate bucatile care sunt =1. acum, noi vom merge pe FDNP (adica ne
+axam pe valoarea 1).
+de exemplu, hai sa luam pozitia 0. avem ca x1, x2, x3 =0, dar y =1. in cazul asta, PESTE TOT unde noi 
+avem ca x =0, noi il negam. deci, pozitia 0 = !x1 !x2 !x3. in pozitia 4 = x1 !x2 !x3.
+
+in pozitia 4, x1 nu a fost negat pt ca el deja este egal cu 1, iar fiindca noi mergem pe metoda FDNP, axata pe valoarea 1, nu 
+trebuie sa fie negat! iar x2, x3 au fost negate, pt ca ele initial erau egale cu 0!
+
+acum, noi putem scrie y (sau f(x)) ca SUMA (fdnp = suma de produse) intre expresiile de pe pozitiile 0, 4, 5 (iarasi, am ales sa ne
+axam pe 1 pentru ca am observat ca erau mai putine valori finale =1, si vrem sa ne usuram viata)
+
+
+y = !x1 !x2 !x3  v  x1 !x2 !x3  v  x1 !x2 x3 
+
+apoi il putem simplifica pe y!
+
+
+
+
+
+
+
+  x1 |  x2 |  x3 |  y  |
+-----------------------
+  0  |  0  |  0  |  1  |
+  0  |  0  |  1  |  1  |
+  0  |  1  |  0  |  0  |
+  0  |  1  |  1  |  1  |
+  1  |  0  |  0  |  1  |
+  1  |  0  |  1  |  0  |
+  1  |  1  |  0  |  1  |
+  1  |  1  |  1  |  1  |
+
+
+
+carno...
+
+         x1  .  x1  .  !x1 .  !x1 .
+  x2  .
+  !x2 .
+         !x3 .  x3  .  x3  .  !x3 .
+
+
+
+         x1  .  x1  .  !x1 .  !x1 .
+  x2  .   1  |   1  |   1  |   0  |
+  !x2 .   1  |   0  |   1  |   1  |
+         !x3 .  x3  .  x3  .  !x3 .
+
+putem grupa sau alaturatii, sau aceia din colturi opuse pe acelasi rand
+ii grupam pe aceia cu 1
+daca ambii grupati au (de exemplu) x1, x1 ramane. daca unul are !x2 altul x2, nici nu scriem nici unul din alea 2.
+
+hai din primul rand sa grupam 
+    x1 x2 v x3 x2  =  x2 (x1 v x3)
+
+vezi? in primul nu este x3 pt ca odata e x3 odata !x3.
+
+hai din al doilea rand sa grupam 
+    !x3 !x2 (din colturi) v !x2 !x1 (alaturate, dreapta)  =  !x2 (!x3 v !x1)
+
+
+adunam cele 2 expresii
+
+    x2 (x1 v x3) v !x2 (!x3 v !x1) 
