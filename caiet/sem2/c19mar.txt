@@ -1,0 +1,61 @@
+CIRCUITE LOGICE
+
+
+
+
+sunt combinational, secventiale
+
+
+
+c. combinationale sunt circuite la care valorile functiilor logice la iesire depind numai de valorile variabilelor la intrare
+
+exemple:
+    1. sumatorul pe n biti (care aduna numerele binare pe n biti)
+    2. comparatorul (care compara nr binare, la iesire avem 3 functii: <, =, >)
+    3. codificatorul (codifica mesajul primit printr-un nr binar)
+    4. decodificatorul (decodifica nr binar)
+    5. multiplexorul (transferul informatiei de la mai multe surse la un singur destinatar)
+    6. demultiplexorul (transferul informatiie de la o sursa la mai multi destinatari)
+
+
+c. secventiale sunt circuite la care valorile functiilor la iesire NU depind numai de valorile varaibilelor la intrare, ci si de ORDINE,
+si consecutivitatea aplicarii lor la intrare
+
+exemple:
+    1. bistabilul (sincron - notat prin RS; asincron - tot RS. -- pastreaza un bit de informatie)
+    2. registrul (de deplasare de la dreapta spre stanga; de deplasare de la stanga spre dreapta. -- sta la baza memoriei calculatorului)
+    3. numaratoarele (binar direct - la fiecare impuls +1 bit; binar invers - la fiecare impuls -1 bit. -- inregistreaza nr de impulsuri la intrare)
+
+
+
+
+elaborarea circuitelor logice combinationale:
+    - mai intai elaboram circuite logice elementare, si vom identifica portile lor logice - or, and, not, or not, and not, coincidenta
+      pt a le elabora, avem nevoie de un dispozitiv fizic. vom lua 2 tipuri de contacte:
+        1. contact normal deschis (ca la fizica: intrerupator DESCHIS) -- neactionat =0, actionat =1 (ceva de genul = --/ --)
+        2. contact normal inchis (intrerupator inchis) -- neactionat =1, actionat =0 (ceva de genul = ----)
+
+    - pentru NOT vom avea simbolul dreptunghi + un cerculet -- ▯o (ceva de genul)
+    - AND va arata ceva de genul:
+           x1 ---- |----|
+                   | &  |
+                   |    |------ y
+           x2 ---- |----|
+      x1, x2 intra, iar ce iese este =y
+      oricat de straniu ar parea dupa desen, AND este in SERIE, iar OR in PARALEL (or e in paralel pt ca daca macar un x este =1, atunci
+      totul e egal cu 1... si are oleaca de sens)
+    - SAU e ca AND dar cu un 1 inauntru in loc de &
+
+
+
+
+VEZI 1.PNG, 2.PNG
+
+
+
+
+algoritm de elaborare 
+    1. determinam cate variabile avem la intrare
+    2. daca e nevoie, luam si negatiile lor 
+    3. utilizand portile logice elementare, alcatuim circuitul in ordinea efectuarii operatiilor logice
+    4. la iesire, avem una sau mai multe porti logice 
