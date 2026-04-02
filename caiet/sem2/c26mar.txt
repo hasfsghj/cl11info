@@ -1,0 +1,34 @@
+circuite logice combinationale
+
+                            ... face o prelucrare numerica a informatiei  
+
+
+
+
+
+vezi img/mar26/1
+
+
+
+
+
+pt a elabora un c. combinational se executa urmatoarea succesiune:
+    1. stabilirea setului complet de functii, si porti logice respective 
+    2. intocmirea tabelelor de adevar ale tuturor functiilor de iesire 
+    3. (utilizand simbolurile functiilor not, and, or) se scriu expresiile logice ale functiilor de iesire
+    4. la necesitate* se simplifica functiile de iesire 
+    5. se intocmeste schema circuitului
+
+
+hai ex din vaiber!!!!!!!!!! pozele 3, 4
+
+
+
+
+SUMATORUL / proiectare ierarhica
+
+    semisumatorul este un circuit combinational destinat adunarii a 2 cifre binare
+        cum lucreaza: avem x1, x2. y1 = x1 xor x2, y2 = x1x2. sau, y1 = x1 + x2, y2 = restul 
+
+    sumatorul de pe viber (5.png) este x1x2 + x3x4. gen, cand x1=1, x2=1, x3=0, x4=1, alipim x1 cu x2 ( =11) si x3 cu x4 ( =01), apoi adunam 11 + 01
+    de asta rezultatul in drept cu valorile astea este =100

@@ -59,3 +59,12 @@ algoritm de elaborare
     2. daca e nevoie, luam si negatiile lor 
     3. utilizand portile logice elementare, alcatuim circuitul in ordinea efectuarii operatiilor logice
     4. la iesire, avem una sau mai multe porti logice 
+
+
+
+
+
+
+
+
+    TOATE AU FOST SECVENTIALE!!!!!!!!!!!!!!!!!!!!!!!!

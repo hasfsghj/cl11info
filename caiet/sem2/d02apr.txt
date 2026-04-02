@@ -1,0 +1,51 @@
+COMPARATOARE
+
+
+
+
+comparatorul verifica daca a=b, a<b, sau a>b. 
+    * a=b  ==  !a!b v ab
+    * a>b  ==  a!b 
+    * a<b  ==  !ab 
+
+
+compararea pe 2 BITI 
+    *   A = a1a0 (gen daca a1 = 1, a0 = 0, a = 10), B = b1b0
+    1. verificam a1>b1 sau a1<b1 
+    2. cand a1=b1 
+        verificam daca a0>b0 sau a0<b0 
+
+* SEE 1.PNG
+
+
+
+
+
+
+
+
+CODIFICATOARE, DECODIFICATOARE
+
+
+
+simbolul codificatorului pe circuit e "CD"
+
+un exemplu de codificator: pe tastatura scriem cifra "1". adica, actionam tasta "x1".
+el ca output ne da 0001. daca pe tastatura scriem 5, adica x5, outputul va fi 0101. un singur input, "xn", si 4 outputuri - cifra 
+in baza 2.
+
+* SEE 2.PNG
+
+
+
+DECODIFICATOR 
+
+noi punem un nr binar din 3 cifre = x1 x2 x3 (gen 010, 110, ...). daca noi avem ca x1 x2 x3 = 010, el asta vede ca y2 = TRUE (pentru ca 010 = 2).
+la decodificator tabelul are sus y0 y1 y2 y3 y4 ..., si ar fi toate =0 INAFARA de y2. (in cazul nostru)
+
+daca am introduce 011, ar fi y0, y1, y2, y4, y5, ... =0, iar y3 = 1.
+
+
+
+  codificator - fCnp. - cauta 0
+DEcodificator - fDnp. - cauta 1
