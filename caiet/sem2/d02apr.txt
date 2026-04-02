@@ -47,5 +47,5 @@ daca am introduce 011, ar fi y0, y1, y2, y4, y5, ... =0, iar y3 = 1.
 
 
 
-  codificator - fCnp. - cauta 0
-DEcodificator - fDnp. - cauta 1
+  codificator - fcnp. - cauta 0
+DEcodificator - fdnp. - cauta 1
