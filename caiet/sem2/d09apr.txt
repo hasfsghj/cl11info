@@ -1,0 +1,34 @@
+circuite secventiale - AU memorie
+circuite combinationale - NU au memorie
+
+
+
+* see 1.png 
+
+
+de exemplu, apasarea butonului telefonului de ON/OFF este ca circuit secvential.
+
+
+
+
+bistabil asincron
+
+    R - reset
+    S - set
+    Q - IESIRE 
+
+r =0, s =0 -- PASTRARE -- ecranul tine minte bitul memorat anterior; este sau stins (dupa apasarea lui R) sau pornit (dupa apasarea lui S)
+r =0, s =1 -- SETARE   -- q devine =1. ecranul la telefon se porneste.
+r =1, s =0 -- RESETARE -- q devine =0. ecranul la telefon se stinge.
+r =1, s =1 -- RAU!     -- scurtcircuit logic
+
+cand q =0, e OPRIT; cand q =1, e PORNIT
+
+
+
+
+este un tip de bistabil -- bistabil toggle.
+
+de exemplu pixul. tu toggle-uiesti pixul pt un timp scurt (adica apesi butonul -- tu il actionezi pentru 1 secunda), dar pixul 
+ramane deschis (in starea '1') pentru Mult Timp, pana cand nu il actionezi din nou.
+iarasi, insasi toggle-ul ia un timp scurt, dar Q ramane neschimbat pana tu nu actionezi toggle ul iara.
